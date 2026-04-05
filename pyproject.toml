@@ -4,7 +4,7 @@ build-backend = "hatchling.build"
 
 [project]
 name = "mcp-link"
-version = "0.1.1""
+version = "0.1.1"
 description = "The MCP Server Package Manager — install MCP servers in one command for Claude, Cursor & Windsurf"
 readme = "README.md"
 license = {text = "MIT"}
