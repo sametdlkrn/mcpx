@@ -31,3 +31,6 @@ mcpx = "mcpx.cli:main"
 Homepage = "https://github.com/sametdlkrn/mcpx"
 Repository = "https://github.com/sametdlkrn/mcpx"
 Issues = "https://github.com/sametdlkrn/mcpx/issues"
+
+[tool.hatch.build.targets.wheel]
+packages = ["mcpx"]
