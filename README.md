@@ -10,7 +10,7 @@ Install MCP servers in one command. No more manual JSON editing.
 > (since `mcpx` was already taken on PyPI).
 
 ```bash
-pip install mcp-link
+
 ```
 
 
