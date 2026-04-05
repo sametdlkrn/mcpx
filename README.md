@@ -1,13 +1,16 @@
-# mcpx — The MCP Server Package Manager
-![mcpx demo](demo.gif)
+# mcp-link — The MCP Server Package Manager
+![mcp-link demo](demo.gif)
+
+
+
 
 
 Install MCP servers in one command. No more manual JSON editing.
 
 
 ## Installation
-> **Note:** The CLI command is `mcpx`. The PyPI package name is `mcp-link`
-> (since `mcpx` was already taken on PyPI).
+
+> **Install:** `pip install mcp-link`
 
 ```bash
 
@@ -18,16 +21,16 @@ Install MCP servers in one command. No more manual JSON editing.
 
 
 ```bash
-mcpx install brave-search
-mcpx install github -e GITHUB_PERSONAL_ACCESS_TOKEN=ghp_xxx
-mcpx install filesystem --path ~/projects
-mcpx list
-mcpx search database
-mcpx remove brave-search
+mcp-link install brave-search
+mcp-link install github -e GITHUB_PERSONAL_ACCESS_TOKEN=ghp_xxx
+mcp-link install filesystem --path ~/projects
+mcp-link list
+mcp-link search database
+mcp-link remove brave-search
 ```
 
 
-mcpx auto-detects your AI clients (Claude Desktop, Cursor, Windsurf) and updates their config files safely, with a backup before every change.
+mcp-link auto-detects your AI clients (Claude Desktop, Cursor, Windsurf) and updates their config files safely, with a backup before every change.
 
 
 ## Commands
@@ -35,5 +38,5 @@ mcpx auto-detects your AI clients (Claude Desktop, Cursor, Windsurf) and updates
 
 | Command | Description |
 |---|---|
-| `mcpx install <server>` | Install a server |
-| `mcpx remove <server>` | Remove a server |
+| `mcp-link install <server>` | Install a server |
+| `mcp-link remove <server>` | Remove a server |

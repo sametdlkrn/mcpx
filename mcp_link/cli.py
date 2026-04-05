@@ -1,11 +1,11 @@
-"""mcpx - The MCP Server Package Manager CLI"""
+"""mcp-link - The MCP Server Package Manager CLI"""
 
 import sys
 import argparse
 
-from mcpx import __version__
-from mcpx.registry import REGISTRY, get_server, search_servers, list_by_category, CATEGORIES
-from mcpx.config import (
+from mcp_link import __version__
+from mcp_link.registry import REGISTRY, get_server, search_servers, list_by_category, CATEGORIES
+from mcp_link.config import (
     detect_clients, get_installed, install_server, remove_server,
     build_server_entry, list_all_installed, CLIENTS,
 )
@@ -50,7 +50,7 @@ def cmd_install(args):
     info = get_server(args.server)
     if not info:
         print(c(f"\n✗ Server '{args.server}' not found.", RED))
-        print(f"  Run {c('mcpx search <query>', CYAN)} to find servers.\n")
+        print(f"  Run {c('mcp-link search <query>', CYAN)} to find servers.\n")
         sys.exit(1)
     env_overrides = {}
     for e in (args.env or []):
@@ -106,7 +106,7 @@ def cmd_list(args):
     all_installed = list_all_installed()
     if not all_installed:
         print(f"\n{c('No MCP servers installed yet.', YELLOW)}")
-        print(f"Run {c('mcpx search', CYAN)} to discover servers.\n"); return
+        print(f"Run {c('mcp-link search', CYAN)} to discover servers.\n"); return
     target = [args.client] if getattr(args, "client", None) else list(all_installed.keys())
     print()
     for cl in target:
@@ -144,14 +144,14 @@ def cmd_search(args):
         cat = info["category"]; emoji = EMOJI_CAT.get(cat, "📦")
         print(f"  {c(name, CYAN):<{col_w+9}} {emoji} {cat:<14} {info['description'][:45]}")
     print(f"\n  {c(f'{len(results)} server(s) found.', DIM)}")
-    print(f"  Install: {c('mcpx install <name>', BOLD+CYAN)}\n")
+    print(f"  Install: {c('mcp-link install <name>', BOLD+CYAN)}\n")
 
 
 def cmd_info(args):
     info = get_server(args.server)
     if not info:
         print(c(f"Server '{args.server}' not found.", RED)); sys.exit(1)
-    install_cmd = f"mcpx install {args.server}"
+    install_cmd = f"mcp-link install {args.server}"
     for k in info.get("requires_env", []): install_cmd += f" -e {k}=<value>"
     print()
     print(f"  {EMOJI_CAT.get(info['category'],'📦')}  {c(args.server, BOLD+CYAN)}")
@@ -164,12 +164,12 @@ def cmd_info(args):
     print(f"\n  {c('Install:', BOLD)}  {c(install_cmd, BOLD+CYAN)}\n")
 
 
-def cmd_version(_): print(f"mcpx {c('v'+__version__, BOLD+CYAN)}")
+def cmd_version(_): print(f"mcp-link {c('v'+__version__, BOLD+CYAN)}")
 
 
 def build_parser():
-    parser = argparse.ArgumentParser(prog="mcpx", description="📦  mcpx — The MCP Server Package Manager", add_help=True)
-    parser.add_argument("--version", action="version", version=f"mcpx v{__version__}")
+    parser = argparse.ArgumentParser(prog="mcp-link", description="📦  mcp-link — The MCP Server Package Manager", add_help=True)
+    parser.add_argument("--version", action="version", version=f"mcp-link v{__version__}")
     sub = parser.add_subparsers(dest="command", metavar="<command>")
     p = sub.add_parser("install", help="Install an MCP server")
     p.add_argument("server"); p.add_argument("-c", "--client")
