@@ -1,0 +1,40 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "mcpx"
+version = "0.1.0"
+description = "The MCP Server Package Manager — install, manage and discover MCP servers for Claude, Cursor & Windsurf"
+readme = "README.md"
+license = { text = "MIT" }
+requires-python = ">=3.10"
+authors = [{ name = "mcpx contributors" }]
+keywords = ["mcp", "claude", "cursor", "windsurf", "llm", "ai", "agent", "package-manager"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Environment :: Console",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+    "Topic :: Utilities",
+]
+dependencies = [
+    "typer>=0.12",
+    "rich>=13.0",
+]
+
+[project.urls]
+Homepage = "https://github.com/sametdlkrn/mcpx"
+Repository = "https://github.com/sametdlkrn/mcpx"
+"Bug Tracker" = "https://github.com/sametdlkrn/mcpx/issues"
+
+[project.scripts]
+mcpx = "mcpx.cli:main"
+
+[tool.hatch.build.targets.wheel]
+packages = ["mcpx"]
