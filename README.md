@@ -6,7 +6,8 @@ Install MCP servers in one command. No more manual JSON editing.
 
 
 ## Installation
-
+> **Note:** The CLI command is `mcpx`. The PyPI package name is `mcp-link`
+> (since `mcpx` was already taken on PyPI).
 
 ```bash
 pip install mcp-link
