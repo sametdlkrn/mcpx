@@ -1,4 +1,5 @@
 # mcpx — The MCP Server Package Manager
+![mcpx demo](demo.gif)
 
 
 Install MCP servers in one command. No more manual JSON editing.
