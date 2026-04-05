@@ -25,7 +25,7 @@ requires-python = ">=3.10"
 dependencies = []
 
 [project.scripts]
-mcpx = "mcpx.cli:main"
+mcp-link = "mcp_link.cli:main"
 
 [project.urls]
 Homepage = "https://github.com/sametdlkrn/mcpx"
